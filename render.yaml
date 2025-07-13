@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: reiko-backend
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn backend.main:app --host 0.0.0.0 --port 10000"
+    envVars:
+      - key: ELEVEN_API_KEY
+        value: sk_431f0b40275fdbb55a642ec14affefe2995b6bd044e36e03 
+      - key: OTHER_ENV_VAR
+        value: VALOR
+    plan: free
